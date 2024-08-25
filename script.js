@@ -5,7 +5,6 @@ const movieCards = [
   { img: '/media/noimage.svg', title: 'MV「魔法」', caption: 'MV\n「魔法」' }
 ];
 
-
 const newsCards = [
   { img: '/media/noimage.svg', title: 'ページ公開', caption: 'ARGOのホームページを公開しました。\n2024年9月30日' },
   { img: '/media/noimage.svg', title: 'クラウドファンディング', caption: '特撮「ブラッドマン」のためのクラウドファンディングを実施いたします。' },

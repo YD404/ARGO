@@ -10,7 +10,7 @@ body, html {
 body {
   font-family:"Noto Sans JP", Arial, sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #0D0D0D
 }
 
 header {
@@ -50,11 +50,11 @@ footer p{
 }
 
 nav {
-  background-color: #8C1822; /* #444を#8C1822に変更 */
+  background-color: #8C1822;
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.5em #0D0D0D;
   z-index: 1000;
   padding: 0.5em;
   /* border-radius: 0 0 0 4em; */
@@ -103,13 +103,18 @@ nav {
   .menu-toggle {
     display: block;  /* メニュー表示ボタンを表示 */
     margin: 10px auto;
+    border-radius: 0.5em;
   }
 
   .close-menu {
     display: block;  /* 閉じるボタンも表示 */
     margin: 10px auto;
+    border-radius: 0.5em;
   }
 
+  nav {
+  background-color: #8C1822ee
+  }
   nav .menu {
     flex-direction: column;
     align-items: center;
@@ -117,7 +122,7 @@ nav {
   }
 
   nav .menu.expanded {
-    max-height: 300px; /* 展開時の高さを設定 */
+    max-height: 100vh; /* 展開時の高さを設定 */
   }
 
   .menu li {
@@ -130,13 +135,13 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px;
+  margin: 16px;
 }
 
 .card {
   /* border: 1px solid #ccc; */
   border-radius: 0.5em;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 1em #0D0D0D99;
   margin: 10px;
   width: 20em;
   overflow: hidden;
@@ -169,28 +174,24 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #0D0D0Dee;
   display: none; /* 初期状態は非表示 */
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 500;
 }
 
 .overlay-content {
   background-color: #fafafa;
   padding: 0.5em;
   border-radius: 0.5em;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1em #dfcebf;
   width: 75vw;
   height: 50hw;
   position: relative;
   white-space: pre-line; /* 改行を認識して表示 */
   word-wrap: break-word; /* 長い単語がある場合に改行 */
 }
-
-#overlay-title{
-}
-
 
 .overlay img {
   max-width: 100%;
@@ -203,18 +204,37 @@ nav {
   position: absolute;
   top: 10px;
   right: 20px;
-  font-size: 30px;
+  font-size: 4em;
   cursor: pointer;
 }
 
 .overlay h2 {
-  margin: 10px 0;
-  font-size: 24px;
+  font-size: 1.5em;
 }
 
 .overlay p {
-  font-size: 16px;
-  color: #333;
+  font-size: 1em;
+  margin: 1em;
+}
+
+/* 文章のブロック */
+.textblock{
+  margin: 0 2em 0 2em;
+}
+
+/* 背景色 */
+.bacWhite{
+  padding: 1em 0 1em 0;
+  background-color: #fafafa;
+}
+
+.bacWhiteAlpha{
+  padding: 1em 0 1em 0;
+  background-color: #fafafaee;
+}
+.bacblackAlpha{
+  padding: 1em 0 1em 0;
+  background-color: #0D0D0Dee;
 }
 
 /* 文字 */
@@ -242,32 +262,32 @@ p{
   font-weight: 600; /* 太さ */
 }
 
-/* ボタンのスタイリング */
+/* もっと見るなどのボタン */
 .more{
+  padding: 1em 0 1em 0;
   text-align: center;
 }
-.more-button {
-  /* background-color: #dfcebf; */
-  color: #A61717;
+.more-button,.connect-button {
+  background-color: #fafafa00;
   border: solid;
   border-radius: 2em;
   height:4em;
   width: 16em;
   font-size: 1.25em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
-
-/* ボタンのホバー時のスタイリング */
-.more-button:hover {
-  color: #F20707; /* ホバー時の文字色 */
-  background-color: #0D0D0D; 
+.more-button{
+  color: #A61717;
+}
+.connect-button{
+  color:#fafafa;
+}
+/* ボタンのホバー時 */
+.more-button:hover,.connect-button:hover {
+  /* .color: #F20707; 
+  background-color: #0D0D0D; */
   font-weight: bold; /* ホバー時にフォントをボールドにする */
-}
-/* カード要素 */
-.textcard{
-  margin: 4em;
-}
+} 
 
 /*** index.htmlのみ ***/
 
@@ -285,7 +305,7 @@ p{
 }
 
 .main-visual {
-  background-image: url('path/to/your/image.jpg'); /* メインビジュアル画像のパスを指定 */
+  /* background-image: url('path/to/your/image.jpg'); メインビジュアル画像のパスを指定 */
   background-size: cover;
   background-position: center;
   height: 100vh; /* 画面全体の高さに設定 */
@@ -293,12 +313,10 @@ p{
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: #dfcebf; /* メインビジュアル上のテキストの色 */
 }
 
 .main-visual-content {
-  /* background-color: rgba(0, 0, 0, 0.5); 背景を半透明の黒にしてテキストを見やすく */
+  /* background-color: #0d0d0d99; 背景を半透明の黒にしてテキストを見やすく */
   padding: 20px;
   border-radius: 10px;
   color: #A61717;
@@ -310,23 +328,15 @@ p{
   font-weight: 900; /* 太さ */
   margin-top: -10vw; /* 上の余白をゼロに設定 */
   margin-bottom: -10vw; /* 下の余白をゼロに設定 */
-  text-shadow: 0px 0px 20px #808080;
+  text-shadow: 0 0 16px  #fafafa99;
 }
 .main-visual-content p{
   font-size: 3vw;
   font-weight: 600; /* 太さ */
-  text-shadow: 0px 0px 10px #808080;
+  text-shadow: 0 0 8px  #fafafa99;
+  text-align: center;
 }
-
-.main-title {
+/* .main-title {
   margin: 0;
   font-size: 2em;
-}
-
-.bacWhite{
-  background-color: #fafafa;
-}
-
-.bacWhiteAlpha{
-  background-color: #fafafa90;
-}
+} */

@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-  rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
 
 <head>
   <meta charset="UTF-8">
@@ -16,7 +9,6 @@
 </head>
 
 <body>
-
   <header>
     <button id="menuToggle" class="menu-toggle">メニュー</button>
     <button id="closeMenu" class="close-menu" style="display: none;">閉じる</button>
@@ -38,18 +30,18 @@
 
   <main>
     <div class="bacWhite">
-      <div class="textcard">
+      <div class="textblock">
         <h1>ARGOとは？</h1>
         <p>ARGOは、2020年から活動を開始した映像制作団体です。<br>
           実写映画からMV、特撮、3DCGアニメまで、多種多様な映像作品を制作・発表しております。</p>
       </div>
-      <div class="textcard">
+      <div class="textblock">
         <h2>最近の作品</h2>
         <div id="movie-container" class="card-container"></div>
         <!-- 映画作品はJavaScriptで動的に追加されます -->
         <div class="more"><button onclick="location.href='all-movies.html'" class="more-button">もっと見る</button></div>
       </div>
-      <div class="textcard">
+      <div class="textblock">
         <h2>お知らせ</h2>
         <div id="news-container" class="card-container"></div>
         <div class="more"><button onclick="location.href='news.html'" class="more-button">もっと見る</button></div>
@@ -65,11 +57,18 @@
       </div>
     </div>
     <div class="bacWhiteAlpha">
-      <div class="textcard">
+      <div class="textblock">
         <h2>SNS</h2>
-        <h3>準備中</h3>
+        <h3><a href="https://twitter.com/ARGO_tesla?ref_src=twsrc%5Etfw" class="twitter-follow-button"
+            data-show-count="false">Follow @ARGO_tesla</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </h3>
         <h2>ミニゲーム</h2>
         <h3>準備中</h3>
+      </div>
+    </div>
+    <div class="bacblackAlpha">
+      <div class="more"><button onclick="location.href='connect.html'" class="connect-button">お問い合わせ</button></div>
     </div>
   </main>
 
