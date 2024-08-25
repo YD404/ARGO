@@ -47,14 +47,27 @@
         <h2>最近の作品</h2>
         <div id="movie-container" class="card-container"></div>
         <!-- 映画作品はJavaScriptで動的に追加されます -->
+        <div class="more"><button onclick="location.href='all-movies.html'" class="more-button">もっと見る</button></div>
       </div>
       <div class="textcard">
         <h2>お知らせ</h2>
         <div id="news-container" class="card-container"></div>
+        <div class="more"><button onclick="location.href='news.html'" class="more-button">もっと見る</button></div>
+      </div>
+    </div>
+    <div id="overlay" class="overlay">
+      <!-- オーバーレイ -->
+      <div class="overlay-content">
+        <span class="close-button" onclick="closeOverlay()">&times;</span>
+        <img id="overlay-img" src="" alt="">
+        <h2 id="overlay-title"></h2>
+        <p id="overlay-caption"></p>
       </div>
     </div>
     <div class="bacWhiteAlpha">
       <div class="textcard">
+        <h2>SNS</h2>
+        <h3>準備中</h3>
         <h2>ミニゲーム</h2>
         <h3>準備中</h3>
     </div>

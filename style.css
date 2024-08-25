@@ -136,11 +136,19 @@ nav {
 .card {
   /* border: 1px solid #ccc; */
   border-radius: 0.5em;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
   margin: 10px;
   width: 20em;
   overflow: hidden;
   background-color: #dfcebf;;
+  transition: transform 0.3s ease;
+}
+
+.card:hover{
+  transform: scale(1.1); /* ホバー時に1.1倍に拡大 */
+}
+.card:not(:hover) {
+  transform: scale(1); /* ホバー解除時に通常のサイズに戻す */
 }
 
 .card img {
@@ -148,10 +156,65 @@ nav {
   height: auto;
 }
 
-.card-caption {
+.card-title {
   padding: 15px;
   text-align: left;
   font-size: 1.5em;
+}
+
+/* カードのオーバレイ */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none; /* 初期状態は非表示 */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  background-color: #fafafa;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 75vw;
+  height: 50hw;
+  position: relative;
+  white-space: pre-line; /* 改行を認識して表示 */
+  word-wrap: break-word; /* 長い単語がある場合に改行 */
+}
+
+#overlay-title{
+}
+
+
+.overlay img {
+  max-width: 100%;
+  height: 20vw;
+  display: block; /* Make sure it's a block-level element */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.overlay h2 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.overlay p {
+  font-size: 16px;
+  color: #333;
 }
 
 /* 文字 */
@@ -179,6 +242,28 @@ p{
   font-weight: 600; /* 太さ */
 }
 
+/* ボタンのスタイリング */
+.more{
+  text-align: center;
+}
+.more-button {
+  /* background-color: #dfcebf; */
+  color: #A61717;
+  border: solid;
+  border-radius: 2em;
+  height:4em;
+  width: 16em;
+  font-size: 1.25em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* ボタンのホバー時のスタイリング */
+.more-button:hover {
+  color: #F20707; /* ホバー時の文字色 */
+  background-color: #0D0D0D; 
+  font-weight: bold; /* ホバー時にフォントをボールドにする */
+}
 /* カード要素 */
 .textcard{
   margin: 4em;

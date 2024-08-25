@@ -1,16 +1,16 @@
-// カードデータの定義
 const movieCards = [
-  { img: '/media/noimage.svg', caption: '【製作中】特撮「ブラッドマン」' },
-  { img: '/media/noimage.svg', caption: '【製作中】CGアニメ「トレイン」' },
-  { img: '/media/noimage.svg', caption: '【製作中】映画「傷と蝶」' },
-  { img: '/media/noimage.svg', caption: 'MV「魔法」' }
+  { img: '/media/noimage.svg', title: '【製作中】特撮「ブラッドマン」', caption: '特撮「ブラッドマン」' },
+  { img: '/media/noimage.svg', title: '【製作中】CGアニメ「トレイン」', caption: 'CGアニメ「トレイン」' },
+  { img: '/media/noimage.svg', title: '【製作中】映画「傷と蝶」', caption: '映画「傷と蝶」' },
+  { img: '/media/noimage.svg', title: 'MV「魔法」', caption: 'MV\n「魔法」' }
 ];
 
+
 const newsCards = [
-  { img: '/media/noimage.svg', caption: 'ページを公開しました。' },
-  { img: '/media/noimage.svg', caption: 'News 2 Description' },
-  { img: '/media/noimage.svg', caption: 'News 3 Description' },
-  { img: '/media/noimage.svg', caption: 'News 4 Description' }
+  { img: '/media/noimage.svg', title: 'ページ公開', caption: 'ARGOのホームページを公開しました。\n2024年9月30日' },
+  { img: '/media/noimage.svg', title: 'クラウドファンディング', caption: '特撮「ブラッドマン」のためのクラウドファンディングを実施いたします。' },
+  { img: '/media/noimage.svg', title: 'ニュース3', caption: 'News 3 Description' },
+  { img: '/media/noimage.svg', title: 'ニュース4', caption: 'News 4 Description' }
 ];
 
 // カードを生成してDOMに追加する関数
@@ -24,16 +24,40 @@ function addCards(containerId, cards, limit = null) {
 
     const imgElement = document.createElement('img');
     imgElement.src = card.img;
-    imgElement.alt = card.caption;
+    imgElement.alt = card.title;  // 画像のalt属性にタイトルを使用
 
-    const captionElement = document.createElement('div');
-    captionElement.className = 'card-caption';
-    captionElement.innerText = card.caption;
+    const titleElement = document.createElement('div');
+    titleElement.className = 'card-title';
+    titleElement.innerText = card.title;  // タイトルを表示
+
+    // カードクリックイベントでオーバーレイを表示
+    cardElement.onclick = function() {
+      showOverlay(card.img, card.title, card.caption);
+    };
 
     cardElement.appendChild(imgElement);
-    cardElement.appendChild(captionElement);
+    cardElement.appendChild(titleElement);
     container.appendChild(cardElement);
   });
+}
+
+// オーバーレイを表示する関数
+function showOverlay(imgSrc, titleText, captionText) {
+  const overlay = document.getElementById('overlay');
+  const overlayImg = document.getElementById('overlay-img');
+  const overlayTitle = document.getElementById('overlay-title');
+  const overlayCaption = document.getElementById('overlay-caption');
+
+  overlayImg.src = imgSrc;
+  overlayTitle.innerText = titleText;
+  overlayCaption.innerText = captionText;
+  overlay.style.display = 'flex';
+}
+
+// オーバーレイを閉じる関数
+function closeOverlay() {
+  const overlay = document.getElementById('overlay');
+  overlay.style.display = 'none';
 }
 
 // ページに応じたカードの表示
