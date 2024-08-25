@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>映像制作団体ARGO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <button id="menuToggle" class="menu-toggle">メニュー</button>
+    <button id="closeMenu" class="close-menu" style="display: none;">閉じる</button>
+    <div id="menuContainer"></div> <!-- メニューを挿入するコンテナ -->
+  </header>
+
+  <!-- メインビジュアルセクション -->
+  <section class="main-visual">
+    <!-- 背景動画 -->
+    <video autoplay muted loop id="backgroundVideo">
+      <source src="media/background.mp4" type="video/mp4">
+      お使いのブラウザは、ビデオタグをサポートしていません。
+    </video>
+    <div class="main-visual-content">
+      <p>映像制作団体</p>
+      <h1>ARGO</h1>
+    </div>
+  </section>
+
+  <main>
+    <div class="bacWhite">
+      <div class="textcard">
+        <h1>ARGOとは？</h1>
+        <p>ARGOは、2020年から活動を開始した映像制作団体です。<br>
+          実写映画からMV、特撮、3DCGアニメまで、多種多様な映像作品を制作・発表しております。</p>
+      </div>
+      <div class="textcard">
+        <h2>最近の作品</h2>
+        <div id="movie-container" class="card-container"></div>
+        <!-- 映画作品はJavaScriptで動的に追加されます -->
+      </div>
+      <div class="textcard">
+        <h2>お知らせ</h2>
+        <div id="news-container" class="card-container"></div>
+      </div>
+    </div>
+    <div class="bacWhiteAlpha">
+      <div class="textcard">
+        <h2>ミニゲーム</h2>
+        <h3>準備中</h3>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy;映像制作団体ARGO</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
