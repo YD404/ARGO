@@ -10,7 +10,7 @@ body, html {
 body {
   font-family:"Noto Sans JP", Arial, sans-serif;
   background-color: #f4f4f4;
-  color: #0D0D0D
+  color: #353535
 }
 
 header {
@@ -54,7 +54,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  box-shadow: 0 0 0.5em #0D0D0D;
+  box-shadow: 0 0 0.5em #353535;
   z-index: 1000;
   padding: 0.5em;
   /* border-radius: 0 0 0 4em; */
@@ -94,7 +94,7 @@ nav {
 
 .menu li a:hover {
   color: #F20707; /* ホバー時の文字色 */
-  background-color: #0D0D0D; /* ホバー時の背景色を広く適用 */
+  background-color: #353535; /* ホバー時の背景色を広く適用 */
   font-weight: bold; /* ホバー時にフォントをボールドにする */
 }
 
@@ -141,7 +141,7 @@ nav {
 .card {
   /* border: 1px solid #ccc; */
   border-radius: 0.5em;
-  box-shadow: 0 0 1em #0D0D0D99;
+  box-shadow: 0 0 1em #35353599;
   margin: 10px;
   width: 20em;
   overflow: hidden;
@@ -174,7 +174,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0D0D0Dee;
+  background-color: #353535ee;
   display: none; /* 初期状態は非表示 */
   justify-content: center;
   align-items: center;
@@ -234,7 +234,7 @@ nav {
 }
 .bacblackAlpha{
   padding: 1em 0 1em 0;
-  background-color: #0D0D0Dee;
+  background-color: #242830ee;
 }
 
 /* 文字 */
@@ -262,6 +262,11 @@ p{
   font-weight: 600; /* 太さ */
 }
 
+p span{
+  position: relative;
+  background: linear-gradient(transparent 40%, yellow 40%);
+}
+
 /* もっと見るなどのボタン */
 .more{
   padding: 1em 0 1em 0;
@@ -269,7 +274,7 @@ p{
 }
 .more-button,.connect-button {
   background-color: #fafafa00;
-  border: solid;
+  border: 1px solid;
   border-radius: 2em;
   height:4em;
   width: 16em;
@@ -285,7 +290,7 @@ p{
 /* ボタンのホバー時 */
 .more-button:hover,.connect-button:hover {
   /* .color: #F20707; 
-  background-color: #0D0D0D; */
+  background-color: #353535; */
   font-weight: bold; /* ホバー時にフォントをボールドにする */
 } 
 
@@ -316,7 +321,7 @@ p{
 }
 
 .main-visual-content {
-  /* background-color: #0d0d0d99; 背景を半透明の黒にしてテキストを見やすく */
+  /* background-color: #35353599; 背景を半透明の黒にしてテキストを見やすく */
   padding: 20px;
   border-radius: 10px;
   color: #A61717;
