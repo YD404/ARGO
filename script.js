@@ -1,7 +1,7 @@
 const movieCards = [
-  { img: '/media/noimage.svg', title: '【製作中】特撮「ブラッドマン」', caption: '特撮「ブラッドマン」' },
-  { img: '/media/noimage.svg', title: '【製作中】CGアニメ「トレイン」', caption: 'CGアニメ「トレイン」' },
-  { img: '/media/noimage.svg', title: '【製作中】映画「傷と蝶」', caption: '映画「傷と蝶」' },
+  { img: '/media/noimage.svg', title: '【制作中】特撮「ブラッドマン」', caption: '特撮「ブラッドマン」' },
+  { img: '/media/noimage.svg', title: '【制作中】CGアニメ「トレイン」', caption: 'CGアニメ「トレイン」' },
+  { img: '/media/noimage.svg', title: '【制作中】映画「傷と蝶」', caption: '映画「傷と蝶」' },
   { img: '/media/noimage.svg', title: 'MV「魔法」', caption: 'MV\n「魔法」' }
 ];
 
