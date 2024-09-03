@@ -103,13 +103,13 @@ nav {
   .menu-toggle {
     display: block;  /* メニュー表示ボタンを表示 */
     margin: 10px auto;
-    border-radius: 0.5em;
+    border-radius: 1rem;
   }
 
   .close-menu {
     display: block;  /* 閉じるボタンも表示 */
     margin: 10px auto;
-    border-radius: 0.5em;
+    border-radius: 1rem;
   }
 
   nav {
@@ -140,12 +140,12 @@ nav {
 
 .card {
   /* border: 1px solid #ccc; */
-  border-radius: 0.5em;
+  border-radius: 1rem;
   box-shadow: 0 0 1em #35353599;
   margin: 10px;
   width: 20em;
   overflow: hidden;
-  background-color: #dfcebf;;
+  background-color: #fafafa;;
   transition: transform 0.3s ease;
 }
 
@@ -184,7 +184,7 @@ nav {
 .overlay-content {
   background-color: #fafafa;
   padding: 0.5em;
-  border-radius: 0.5em;
+  border-radius: 1rem;
   box-shadow: 0 0 1em #dfcebf;
   width: 75vw;
   height: 50hw;
@@ -215,6 +215,109 @@ nav {
 .overlay p {
   font-size: 1em;
   margin: 1em;
+}
+
+/*メンバー紹介カード*/
+.card-member-large,.card-member-medium,.card-member-small{
+  display: flex;
+  margin: 1em;
+  overflow: hidden;
+  min-width: 340px; 
+}
+.card-member-large img,.card-member-medium img,.card-member-small img{
+  object-fit: cover;
+  min-width: 50%;
+  width: 50%;
+  border-radius: 1rem;
+}
+.content-member{
+  padding: 1rem;
+  margin: 0.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content-member h2,.content-member h3{
+  color: #353535;
+  text-align: left;
+}
+.content-member h3{
+  margin: 0;
+}
+.content-member p{
+  margin: 0.5rem 0 0.5rem 0;
+}
+.card-member-large {
+  height: 100%;
+  max-width: 90vw;
+}
+.card-member-medium {
+  height: 20%;
+  max-width: 90vw;
+}
+.card-member-small {
+  height: 10%;
+  max-width: 30vw;
+}
+
+.card-member-large h2{
+  font-size: 8vh;
+}
+.card-member-medium h2{
+  font-size: 4vh;
+}
+.card-member-small h2{
+  font-size: 2.5vh;
+}
+.card-member-large h3{
+  font-size: 4vh;
+}
+.card-member-medium h3{
+  font-size: 3vh;
+}
+.card-member-small h3{
+  font-size: 2vh;
+}
+.card-member-large p{
+  font-size: 2rem;
+}
+/* 
+.card-member-large .content-history h2{
+  font-size: 2rem;
+}
+.card-member-medium .content-history h2{
+  font-size: 1.25rem;
+}
+.card-member-small .content-history h2{
+  font-size: 1rem;
+} */
+.card-member-large .content-history p,.card-member-medium .content-history p,.card-member-small .content-history p{
+  font-family:"Noto Sans JP", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.social-icons {
+  /* margin-top: 10px; */
+  display: flex;
+  gap: 1rem;
+}
+
+.fa-brands{
+	font-size: 2em;
+  color:#353535;
+}
+/*スマホ用メンバーカード*/
+@media (max-width: 800px) {
+  .card-member-large{
+    display:block;
+    width:100%;
+    max-width:100%;
+  }
+  .card-member-large img{
+    width: 100%;
+  }
 }
 
 /* 文章のブロック */
@@ -275,7 +378,7 @@ p span{
 .more-button,.connect-button {
   background-color: #fafafa00;
   border: 1px solid;
-  border-radius: 2em;
+  border-radius: 4rem;
   height:4em;
   width: 16em;
   font-size: 1.25em;

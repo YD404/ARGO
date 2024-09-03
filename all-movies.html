@@ -2,47 +2,47 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>映像制作団体ARGO - 作品一覧</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>映像制作団体ARGO - 作品一覧</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <button id="menuToggle" class="menu-toggle">メニュー</button>
-        <button id="closeMenu" class="close-menu" style="display: none;">閉じる</button>
-        <div id="menuContainer"></div> <!-- メニューを挿入するコンテナ -->
-    </header>
+  <header>
+    <button id="menuToggle" class="menu-toggle">メニュー</button>
+    <button id="closeMenu" class="close-menu" style="display: none;">閉じる</button>
+    <div id="menuContainer"></div> <!-- メニューを挿入するコンテナ -->
+  </header>
 
-    <main>
-        <div class="bacWhite">
-            <div class="textblock">
-                <h1>作品一覧</h1>
-                <div id="movie-container" class="card-container"></div>
-                <!-- すべての映画作品はJavaScriptで動的に追加されます -->
-            </div>
+  <main>
+    <div class="bacWhite">
+      <div class="textblock">
+        <h1>作品一覧</h1>
+        <div id="movie-container" class="card-container"></div>
+        <!-- すべての映画作品はJavaScriptで動的に追加されます -->
         </div>
-        <div id="overlay" class="overlay">
-          <!-- オーバーレイ -->
-          <div class="overlay-content">
-            <span class="close-button" onclick="closeOverlay()">&times;</span>
-            <img id="overlay-img" src="" alt="">
-            <h2 id="overlay-title"></h2>
-            <p id="overlay-caption"></p>
-          </div>
+      </div>
+      <div id="overlay" class="overlay">
+        <!-- オーバーレイ -->
+        <div class="overlay-content">
+          <span class="close-button" onclick="closeOverlay()">&times;</span>
+          <img id="overlay-img" src="" alt="">
+          <h2 id="overlay-title"></h2>
+          <p id="overlay-caption"></p>
         </div>
-        <div class="bacblackAlpha">
-          <div class="more"><button onclick="location.href='connect.html'" class="connect-button">お問い合わせ</button></div>
-        </div>
-    </main>
+      </div>
+      <div class="bacblackAlpha">
+      <div class="more"><button onclick="location.href='connect.html'" class="connect-button">お問い合わせ</button></div>
+    </div>
+  </main>
 
-    <footer>
-        <p>&copy;映像制作団体ARGO</p>
-    </footer>
+  <footer>
+    <p>&copy;映像制作団体ARGO</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

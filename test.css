@@ -1,0 +1,46 @@
+/* ベーススタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 90%;
+  max-width: 600px;
+}
+
+.card-image {
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+}
+
+.card-info {
+  flex: 1 1 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-title {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.card-description {
+  margin: 0;
+}
