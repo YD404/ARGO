@@ -5,7 +5,7 @@ const movieCards = [
 
 const newsCards = [
   { img: '/media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<br>『軽井沢殺人事件』の詳しい情報は<a href="https://x.com/stage_shizuka" target="_blank">ここから</a><br><br>2024年9月21日' },
-  { img: '/media/news/news_001.avif', title: 'ARGOホームページ公開', caption: '創作団体ARGOのホームページを公開しました。<br><br>2024年9月21日' },
+  { img: 'https://github.com/YD404/ARGO/raw/refs/heads/main/media/news/news_001.avif', title: 'ARGOホームページ公開', caption: '創作団体ARGOのホームページを公開しました。<br><br>2024年9月21日' },
 ];
 
 // カードを生成してDOMに追加する関数
