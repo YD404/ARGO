@@ -1,3 +1,5 @@
+/*未来の私用のメモ書きあり！！*/
+
 /*** 全html共通 ***/
 body, html {
   margin: 0;
@@ -33,7 +35,17 @@ footer {
 footer p{
   font-size: 1em;
 }
+
 /* メニュー */
+/*
+800px以下だと、スマホ表示用のメニューになります。
+<nav>
+  <ul class="menu">
+  <li><a>
+  という構造になっており、
+  .menu-toggle,.close-menu
+  は、スマホ用メニューのボタンで各htmlのheaderに記述されてます。
+*/
 .menu-toggle,
 .close-menu {
   display: none;  /* デフォルトでは表示しない */
@@ -71,7 +83,7 @@ nav {
   display: flex;
   justify-content: center;
   transition: max-height 0.3s ease-out;
-  max-height: 300px; /* 600px以上の時は常に展開 */
+  max-height: 300px;
   overflow: hidden;
 }
 
@@ -87,19 +99,22 @@ nav {
   color: #dfcebf; /* #fffを#dfcebfに変更 */
   text-decoration: none;
   font-size: 1.2em;
+  font-weight: 600; 
+  transition: all .3s;
   padding: 10px 20px; /* 背景色を広げるためのパディングを追加 */
   display: block; /* aタグをブロック要素にして、ホバー時の背景色を全体に適用 */
   transition: color 0.3s ease, background-color 0.3s ease, font-weight 0.3s ease; /* トランジションの追加 */
 }
 
 .menu li a:hover {
-  color: #F20707; /* ホバー時の文字色 */
-  background-color: #353535; /* ホバー時の背景色を広く適用 */
+  color: #8C1822; /* ホバー時の文字色 */
+  background-color: #fafafa; /* ホバー時の背景色を広く適用 */
   font-weight: bold; /* ホバー時にフォントをボールドにする */
 }
 
 /* レスポンシブ対応メニュー */
-@media (max-width: 600px) {
+/*ほんとはややこしくなるので作りたくなかった*/
+@media (max-width: 800px) {
   .menu-toggle {
     display: block;  /* メニュー表示ボタンを表示 */
     margin: 10px auto;
@@ -113,7 +128,7 @@ nav {
   }
 
   nav {
-  background-color: #8C1822ee
+  background-color: #8C1822ee;
   }
   nav .menu {
     flex-direction: column;
@@ -123,6 +138,7 @@ nav {
 
   nav .menu.expanded {
     max-height: 100vh; /* 展開時の高さを設定 */
+    /* height:100vh; */
   }
 
   .menu li {
@@ -130,7 +146,8 @@ nav {
   }
 }
 
-/* 作品紹介カード */
+/* 作品紹介・お知らせ用カード */
+/*共通したシステムを使っているので、JSでコピペして名前を変えれば増やせます*/
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -159,6 +176,7 @@ nav {
 .card img {
   width: 100%;
   height: auto;
+  object-fit:cover;
 }
 
 .card-title {
@@ -218,17 +236,26 @@ nav {
 }
 
 /*メンバー紹介カード*/
+/*
+クソダサいです。jsは使っておらず、memberを増やす際はhtmlでカードの塊
+<div class="card-member-small">内のもの全てをコピペしてください
+large,medium,smallの3種類ありますが、largeとsmallしか使っていません
+largeは代表用です
+*/
 .card-member-large,.card-member-medium,.card-member-small{
   display: flex;
   margin: 1em;
   overflow: hidden;
   min-width: 340px; 
 }
+.card-member-small{
+  flex-grow:1;
+}
 .card-member-large img,.card-member-medium img,.card-member-small img{
   object-fit: cover;
   min-width: 50%;
   width: 50%;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 .content-member{
   padding: 1rem;
@@ -246,11 +273,12 @@ nav {
   margin: 0;
 }
 .content-member p{
-  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1.5rem;
+  margin: 1rem 0 1rem 0;
 }
 .card-member-large {
   height: 100%;
-  max-width: 90vw;
+  max-width: 80%;
 }
 .card-member-medium {
   height: 20%;
@@ -279,9 +307,6 @@ nav {
 .card-member-small h3{
   font-size: 2vh;
 }
-.card-member-large p{
-  font-size: 2rem;
-}
 /* 
 .card-member-large .content-history h2{
   font-size: 2rem;
@@ -292,24 +317,70 @@ nav {
 .card-member-small .content-history h2{
   font-size: 1rem;
 } */
-.card-member-large .content-history p,.card-member-medium .content-history p,.card-member-small .content-history p{
+/*ここら辺のtableは作品名と役割の奴です。*/
+table{
+  border-collapse: collapse; /* セル間のスペースをなくす */
   font-family:"Noto Sans JP", Arial, sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
-
+th, td {
+  position: relative; /* relativeを指定して::afterでの調整をしやすくする */
+  padding: 0.25rem; /* セル内のパディング */
+  border: none; /* 他のボーダーを無効化 */
+  /* border-bottom: 0.1rem solid #8C1822;  */
+}
+td {
+  border-left:  0.15rem dashed #8C1822; 
+  text-align: left;
+}
+th{
+  text-align: right;
+}
+.card-member-small table{
+  font-size: 0.75rem;
+}
 .social-icons {
-  /* margin-top: 10px; */
+  margin-top: 1rem;
   display: flex;
   gap: 1rem;
 }
 
+/*アイコンにリンクがaタグの影響を受けないようにする*/
+.icon:hover{
+background-color: #00000000;
+}
+img:hover{
+  background-color: #00000000;
+  }
+
 .fa-brands{
-	font-size: 2em;
+	font-size: 2rem;
   color:#353535;
 }
+
+.fa-twitter{
+  color:#1d9bf0;
+}
+.fa-youtube{
+  color:#ff0000;
+}
+
+.card-member-small .fa-brands{
+	font-size: 1.25rem;
+}
+
+hr {
+  border-width: 0.25rem 0 0 0; /* 線の太さを指定 */
+  border-style: dashed; /* 線の種類を指定 */
+  border-color: #8C1822; /*線の色を指定 */
+}
+
 /*スマホ用メンバーカード*/
 @media (max-width: 800px) {
+  .content-member{
+    padding: 0.25rem;
+  }
   .card-member-large{
     display:block;
     width:100%;
@@ -321,11 +392,13 @@ nav {
 }
 
 /* 文章のブロック */
+/*カードなどを置く際の下地となるdivです*/
 .textblock{
   margin: 0 2em 0 2em;
 }
 
 /* 背景色 */
+/*textblockの下地です*/
 .bacWhite{
   padding: 1em 0 1em 0;
   background-color: #fafafa;
@@ -340,16 +413,16 @@ nav {
   background-color: #242830ee;
 }
 
-/* 文字 */
+/*ここから文字系ここから文字系ここから文字系ここから文字系*/
 h1 {
   font-size: 10vw;
-  color: #A61717;
+  color: #8C1822;
   margin-top: -0vw; /* 上の余白をゼロに設定 */
   margin-bottom: -0vw; /* 下の余白をゼロに設定 */
 }
 h2 {
   font-size: 3em;
-  color: #A61717;
+  color: #8C1822;
   margin: 0;
   text-align: center;
 }
@@ -370,6 +443,17 @@ p span{
   background: linear-gradient(transparent 40%, yellow 40%);
 }
 
+a{
+  text-decoration: none;
+  color:#8C1822;
+  font-weight: 800; 
+  transition: all .3s;
+}
+a:hover{
+  background-color: #8C1822;
+  color: #fafafa;
+}
+
 /* もっと見るなどのボタン */
 .more{
   padding: 1em 0 1em 0;
@@ -383,19 +467,24 @@ p span{
   width: 16em;
   font-size: 1.25em;
   cursor: pointer;
+  transition: all .5s;
 }
 .more-button{
-  color: #A61717;
+  color: #8C1822;
 }
 .connect-button{
   color:#fafafa;
 }
 /* ボタンのホバー時 */
-.more-button:hover,.connect-button:hover {
-  /* .color: #F20707; 
-  background-color: #353535; */
-  font-weight: bold; /* ホバー時にフォントをボールドにする */
-} 
+.more-button:hover{
+  background-color: #8C1822;
+  color: #fafafa;
+  font-weight: bold;
+}
+.connect-button:hover{
+  background-color:#242830ee;
+  font-weight: bold;
+}
 
 /*** index.htmlのみ ***/
 
@@ -427,7 +516,7 @@ p span{
   /* background-color: #35353599; 背景を半透明の黒にしてテキストを見やすく */
   padding: 20px;
   border-radius: 10px;
-  color: #A61717;
+  color: #8C1822;
 }
 
 .main-visual-content h1{
@@ -448,3 +537,21 @@ p span{
   margin: 0;
   font-size: 2em;
 } */
+
+.ARGOSNS{
+  justify-content: center;
+  display:flex;
+  gap:2rem;
+  margin: 2rem;
+}
+.ARGOSNS:hover{
+  background-color: #00000000;
+}
+.ARGOSNS .fa-brands{
+	font-size: 5rem;
+}
+
+.foam{
+  width:100%;
+  height: 50rem;
+}

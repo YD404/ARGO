@@ -1,15 +1,11 @@
 const movieCards = [
-  { img: '/media/noimage.svg', title: '【制作中】特撮「ブラッドマン」', caption: '特撮「ブラッドマン」' },
-  { img: '/media/noimage.svg', title: '【制作中】CGアニメ「トレイン」', caption: 'CGアニメ「トレイン」' },
-  { img: '/media/noimage.svg', title: '【制作中】映画「傷と蝶」', caption: '映画「傷と蝶」' },
-  { img: '/media/noimage.svg', title: 'MV「魔法」', caption: 'MV\n「魔法」' }
+  { img: '/media/movie/movie_002.avif', title: '【制作中】CGアニメ『トレイン』', caption: 'CGアニメ『トレイン』鋭意制作中' },
+  { img: '/media/movie/movie_001.avif', title: 'ろくようび『魔法』MV', caption: 'インディーズバンド「ろくようび」ファーストアルバム収録曲『魔法』のミュージックビデオを制作致しました。<a href="https://youtu.be/Tq8UwIODUuk?si=k0xTBpTCe6cqoPG8" target="_blank">本編映像</a><br><br>2022年2月28日' },
 ];
 
 const newsCards = [
-  { img: '/media/noimage.svg', title: 'ページ公開', caption: 'ARGOのホームページを公開しました。\n2024年9月30日' },
-  { img: '/media/noimage.svg', title: 'クラウドファンディング', caption: '特撮「ブラッドマン」のためのクラウドファンディングを実施いたします。' },
-  { img: '/media/noimage.svg', title: 'ニュース3', caption: 'News 3 Description' },
-  { img: '/media/noimage.svg', title: 'ニュース4', caption: 'News 4 Description' }
+  { img: '/media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<br>『軽井沢殺人事件』の詳しい情報は<a href="https://x.com/stage_shizuka" target="_blank">ここから</a><br><br>2024年9月21日' },
+  { img: '/media/news/news_001.avif', title: 'ARGOホームページ公開', caption: '創作団体ARGOのホームページを公開しました。<br><br>2024年9月21日' },
 ];
 
 // カードを生成してDOMに追加する関数
@@ -49,7 +45,7 @@ function showOverlay(imgSrc, titleText, captionText) {
 
   overlayImg.src = imgSrc;
   overlayTitle.innerText = titleText;
-  overlayCaption.innerText = captionText;
+  overlayCaption.innerHTML = captionText;  // innerHTMLを使用してHTMLタグが反映されるようにする
   overlay.style.display = 'flex';
 }
 
@@ -73,6 +69,7 @@ if (window.location.pathname.includes('index.html')) {
 }
 
 
+
 // メニューを読み込む関数
 function loadMenu() {
   fetch('menu.html')
@@ -86,7 +83,7 @@ function loadMenu() {
       const menu = document.querySelector('nav .menu');
 
       // 初期表示時にサイズに応じてメニューの状態を設定
-      if (window.innerWidth > 600) {
+      if (window.innerWidth > 800) {
         menu.classList.add('expanded');
         menuToggle.style.display = 'none';
         closeMenu.style.display = 'none';
@@ -110,7 +107,7 @@ function loadMenu() {
 
       // 画面サイズが変更されたときにメニュー状態を更新
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 600) {
+        if (window.innerWidth > 800) {
           menu.classList.add('expanded');
           menuToggle.style.display = 'none';
           closeMenu.style.display = 'none';

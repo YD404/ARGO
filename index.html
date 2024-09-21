@@ -4,17 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>映像制作団体ARGO</title>
+  <title>創作団体ARGO</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
-    <button id="menuToggle" class="menu-toggle">メニュー</button>
-    <button id="closeMenu" class="close-menu" style="display: none;">閉じる</button>
-    <div id="menuContainer"></div> <!-- メニューを挿入するコンテナ -->
+    <button id="menuToggle" class="menu-toggle">☰</button>
+    <button id="closeMenu" class="close-menu" style="display: none;">×</button>
+    <div id="menuContainer" class="menu-container">
   </header>
-
   <!-- メインビジュアルセクション -->
   <section class="main-visual">
     <!-- 背景動画 -->
@@ -23,7 +22,7 @@
       お使いのブラウザは、ビデオタグをサポートしていません。
     </video>
     <div class="main-visual-content">
-      <p>映像制作団体</p>
+      <p>創作団体</p>
       <h1>ARGO</h1>
     </div>
   </section>
@@ -32,7 +31,7 @@
     <div class="bacWhite">
       <div class="textblock">
         <h1>ARGOとは？</h1>
-        <p>ARGOは、2020年から活動を開始した<span>映像制作団体</span>です。<br>
+        <p>ARGOは、2020年から活動を開始した<span>創作団体</span>です。<br>
           実写映画からMV、特撮、3DCGアニメまで、<span>多種多様な映像作品</span>を制作・発表しております。</p>
       </div>
       <div class="textblock">
@@ -59,10 +58,14 @@
     <div class="bacWhiteAlpha">
       <div class="textblock">
         <h2>SNS</h2>
-        <h3><a href="https://twitter.com/ARGO_tesla?ref_src=twsrc%5Etfw" class="twitter-follow-button"
+        <div class="ARGOSNS">
+        <a href="https://twitter.com/ARGO_tesla" target="_blank" class="icon"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com/argo_meta/" target="_blank" class="icon"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <!-- <h3><a href="https://twitter.com/ARGO_tesla?ref_src=twsrc%5Etfw" class="twitter-follow-button"
             data-show-count="false">Follow @ARGO_tesla</a>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </h3>
+        </h3> -->
         <h2>ミニゲーム</h2>
         <h3>準備中</h3>
       </div>
@@ -73,7 +76,7 @@
   </main>
 
   <footer>
-    <p>&copy;映像制作団体ARGO</p>
+    <p>&copy;創作団体ARGO</p>
   </footer>
 
   <script src="script.js"></script>
