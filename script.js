@@ -83,7 +83,7 @@ function loadMenu() {
       const menu = document.querySelector('nav .menu');
 
       // 初期表示時にサイズに応じてメニューの状態を設定
-      if (window.innerWidth > 800) {
+      if (window.innerWidth > 840) {
         menu.classList.add('expanded');
         menuToggle.style.display = 'none';
         closeMenu.style.display = 'none';
@@ -107,7 +107,7 @@ function loadMenu() {
 
       // 画面サイズが変更されたときにメニュー状態を更新
       window.addEventListener('resize', () => {
-        if (window.innerWidth > 800) {
+        if (window.innerWidth > 840) {
           menu.classList.add('expanded');
           menuToggle.style.display = 'none';
           closeMenu.style.display = 'none';

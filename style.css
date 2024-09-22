@@ -114,7 +114,7 @@ nav {
 
 /* レスポンシブ対応メニュー */
 /*ほんとはややこしくなるので作りたくなかった*/
-@media (max-width: 800px) {
+@media (max-width: 840px) {
   .menu-toggle {
     display: block;  /* メニュー表示ボタンを表示 */
     margin: 10px auto;
@@ -244,7 +244,7 @@ largeは代表用です
 */
 .card-member-large,.card-member-medium,.card-member-small{
   display: flex;
-  margin: 1em;
+  margin: 1rem;
   overflow: hidden;
   min-width: 340px; 
 }
@@ -285,8 +285,15 @@ largeは代表用です
   max-width: 90vw;
 }
 .card-member-small {
-  height: 10%;
-  max-width: 30vw;
+  /* height: 10%; */
+  max-width: 28vw;
+}
+
+@media (max-width: 1279px) {
+  .card-member-small {
+    max-width: 40vw;
+  }
+
 }
 
 .card-member-large h2{
@@ -377,7 +384,7 @@ hr {
 }
 
 /*スマホ用メンバーカード*/
-@media (max-width: 800px) {
+@media (max-width: 840px) {
   .content-member{
     padding: 0.25rem;
   }
@@ -388,6 +395,15 @@ hr {
   }
   .card-member-large img{
     width: 100%;
+  }
+  .card-member-small{
+    display:block;
+    width:100%;
+    max-width:100%;
+  }
+  .card-member-small img{
+    height: 12rem;
+    width:100%;
   }
 }
 
