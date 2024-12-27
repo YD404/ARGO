@@ -470,6 +470,29 @@ a:hover{
   color: #fafafa;
 }
 
+/* JSの詳しくはのボタン */
+a.button {
+  display: inline-block; /* 要素をブロックのように扱う */
+  padding: 1em 1.5em; /* 内側の余白を設定 */
+  background-color: #8C1822; /* 背景色を設定 */
+  color: #fafafa;
+  text-align: center; /* テキストを中央揃え */
+  border-radius: 0.5em; /* 角を丸くする */
+  transition: font-size 0.3s; /* 背景色の変化にトランジションを追加 */
+}
+
+a.button:hover {
+  font-size: 1.75em;
+}
+
+.a-button {
+  display: flex; /* フレックスボックスを使用 */
+  justify-content: center; /* 水平方向に中央配置 */
+  align-items: center; /* 垂直方向に中央配置 */
+  margin: 1em;
+}
+
+
 /* もっと見るなどのボタン */
 .more{
   padding: 1em 0 1em 0;

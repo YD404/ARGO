@@ -1,10 +1,12 @@
 const movieCards = [
+  { img: 'media/movie/movie_003.avif', title: 'ロック・シザース・ペーパーズ', caption: '仲井飛祐監督作品「ロック・シザース・ペーパーズ」公開中！<div class="a-button"><a href="https://youtu.be/7GR_ErCZBLs" class="button" target="_blank">ここから</a></div><br><br>2024年12月26日' },
   { img: 'media/movie/movie_002.avif', title: '【制作中】CGアニメ『トレイン』', caption: 'CGアニメ『トレイン』鋭意制作中' },
-  { img: 'media/movie/movie_001.avif', title: 'ろくようび『魔法』MV', caption: 'インディーズバンド「ろくようび」ファーストアルバム収録曲『魔法』のミュージックビデオを制作致しました。<a href="https://youtu.be/Tq8UwIODUuk?si=k0xTBpTCe6cqoPG8" target="_blank">本編映像</a><br><br>2022年2月28日' },
+  { img: 'media/movie/movie_001.avif', title: 'ろくようび『魔法』MV', caption: 'インディーズバンド「ろくようび」ファーストアルバム収録曲『魔法』のミュージックビデオを制作致しました。<div class="a-button"><a href="https://youtu.be/Tq8UwIODUuk?si=k0xTBpTCe6cqoPG8" class="button" target="_blank">本編映像</a></div><br><br>2022年2月28日' },
 ];
 
 const newsCards = [
-  { img: 'media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<br>『軽井沢殺人事件』の詳しい情報は<a href="https://x.com/stage_shizuka" target="_blank">ここから</a><br><br>2024年9月21日' },
+  { img: 'media/noimage.svg', title: '短編映画「今日が人生一日目！」製作決定', caption: '詳細な続報は2024年度内に公開予定！<br><br>2024年12月26日' },
+  { img: 'media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<div class="a-button"><a href="https://x.com/stage_shizuka"class="button" target="_blank">詳細情報</a></div><br><br>2024年9月21日' },
   { img: 'media/news/news_001.avif', title: 'ARGOホームページ公開', caption: '創作団体ARGOのホームページを公開しました。<br><br>2024年9月21日' },
 ];
 
