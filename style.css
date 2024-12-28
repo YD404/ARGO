@@ -472,23 +472,13 @@ a:hover{
 
 /* JSの詳しくはのボタン */
 a.button {
-  display: inline-block; /* 要素をブロックのように扱う */
-  padding: 1em 1.5em; /* 内側の余白を設定 */
-  background-color: #8C1822; /* 背景色を設定 */
-  color: #fafafa;
-  text-align: center; /* テキストを中央揃え */
-  border-radius: 0.5em; /* 角を丸くする */
-  transition: font-size 0.3s; /* 背景色の変化にトランジションを追加 */
-}
-
-a.button:hover {
-  font-size: 1.75em;
-}
+  line-height: 4em; /* 高さと同じ値にする */
+  font-family:"Noto Sans JP", Arial, sans-serif;
+} 
 
 .a-button {
   display: flex; /* フレックスボックスを使用 */
   justify-content: center; /* 水平方向に中央配置 */
-  align-items: center; /* 垂直方向に中央配置 */
   margin: 1em;
 }
 
@@ -498,24 +488,26 @@ a.button:hover {
   padding: 1em 0 1em 0;
   text-align: center;
 }
-.more-button,.connect-button {
+.more-button,.connect-button,a.button {
   background-color: #fafafa00;
   border: 1px solid;
+  display: inline-block; /* 要素をブロックのように扱う */
   border-radius: 4rem;
   height:4em;
   width: 16em;
   font-size: 1.25em;
   cursor: pointer;
   transition: all .5s;
+  text-align: center; /* テキストを中央揃え */
 }
-.more-button{
+.more-button,a.button{
   color: #8C1822;
 }
 .connect-button{
   color:#fafafa;
 }
 /* ボタンのホバー時 */
-.more-button:hover{
+.more-button:hover,a.button:hover{
   background-color: #8C1822;
   color: #fafafa;
   font-weight: bold;
