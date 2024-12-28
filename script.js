@@ -5,7 +5,7 @@ const movieCards = [
 ];
 
 const newsCards = [
-  { img: 'media/movie/movie_003.avif', title: 'スマホフィルムフェス2024にて「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞！<div class="a-button"><a href="https://x.com/sumahofilmfes/status/1872422264106594493" class="button" target="_blank">詳しく</a></div><br><br>2024年12月28日' },
+  { img: 'media/movie/movie_003.avif', title:'「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞',caption:  'スマホフィルムフェス2024にて「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞！<div class="a-button"><a href="https://x.com/sumahofilmfes/status/1872422264106594493" class="button" target="_blank">詳しく</a></div><br><br>2024年12月28日' },
   { img: 'media/noimage.svg', title: '短編映画「今日が人生一日目！」製作決定', caption: '詳細な続報は2024年度内に公開予定！<br><br>2024年12月26日' },
   { img: 'media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<div class="a-button"><a href="https://x.com/stage_shizuka"class="button" target="_blank">詳細情報</a></div><br><br>2024年9月21日' },
   { img: 'media/news/news_001.avif', title: 'ARGOホームページ公開', caption: '創作団体ARGOのホームページを公開しました。<br><br>2024年9月21日' },
