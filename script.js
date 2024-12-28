@@ -1,5 +1,6 @@
 const movieCards = [
-  { img: 'media/movie/movie_003.avif', title: 'ロック・シザース・ペーパーズ', caption: '仲井飛祐監督作品「ロック・シザース・ペーパーズ」公開中！<div class="a-button"><a href="https://youtu.be/7GR_ErCZBLs" class="button" target="_blank">ここから</a></div><br><br>2024年12月26日' },
+  { img: 'media/movie/movie_003.avif', title: '短編映画「ロック・シザース・ペーパーズ」', caption: '仲井飛祐監督作品「ロック・シザース・ペーパーズ」<div class="a-button"><a href="https://youtu.be/7GR_ErCZBLs" class="button" target="_blank">本編映像</a></div><br><br>2024年12月1日' },
+  { img: 'media/movie/karuizawa.avif', title: '「軽井沢殺人事件」冒頭背景映像・背景画像', caption: '舞台「軽井沢殺人事件」にて、冒頭に上映する映像及び背景に投影する画像を作成いたしました。<br>また、舞台当日の投影業務も行いました。<br><br>2024年11月18日' },
   { img: 'media/movie/movie_002.avif', title: '【制作中】CGアニメ『トレイン』', caption: 'CGアニメ『トレイン』鋭意制作中' },
   { img: 'media/movie/movie_001.avif', title: 'ろくようび『魔法』MV', caption: 'インディーズバンド「ろくようび」ファーストアルバム収録曲『魔法』のミュージックビデオを制作致しました。<div class="a-button"><a href="https://youtu.be/Tq8UwIODUuk?si=k0xTBpTCe6cqoPG8" class="button" target="_blank">本編映像</a></div><br><br>2022年2月28日' },
 ];
