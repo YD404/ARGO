@@ -1,4 +1,4 @@
-const movieCards = [
+  const movieCards = [
   { img: 'media/movie/movie_003.avif', title: '短編映画「ロック・シザース・ペーパーズ」', caption: '仲井飛祐監督作品「ロック・シザース・ペーパーズ」<div class="a-button"><a href="https://youtu.be/7GR_ErCZBLs" class="button" target="_blank">本編映像</a></div><br><br>2024年12月1日' },
   { img: 'media/movie/karuizawa.avif', title: '「軽井沢殺人事件」冒頭背景映像・背景画像', caption: '舞台「軽井沢殺人事件」にて、冒頭に上映する映像及び背景に投影する画像を作成いたしました。<br>また、舞台当日の投影業務も行いました。<br><br>2024年11月18日' },
   { img: 'media/movie/movie_002.avif', title: '【制作中】CGアニメ『トレイン』', caption: 'CGアニメ『トレイン』鋭意制作中' },
@@ -11,6 +11,7 @@ const newsCards = [
   { img: 'media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<div class="a-button"><a href="https://x.com/stage_shizuka"class="button" target="_blank">詳細情報</a></div><br><br>2024年9月21日' },
   { img: 'media/news/news_001.avif', title: 'ARGOホームページ公開', caption: '創作団体ARGOのホームページを公開しました。<br><br>2024年9月21日' },
 ];
+document.addEventListener('DOMContentLoaded', function() {
 
 // カードを生成してDOMに追加する関数
 function addCards(containerId, cards, limit = null) {
@@ -72,7 +73,7 @@ if (window.location.pathname.includes('index.html')) {
   addCards('news-container', newsCards);
 }
 
-
+});
 
 // メニューを読み込む関数
 function loadMenu() {
