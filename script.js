@@ -1,4 +1,4 @@
-  const movieCards = [
+const movieCards = [
   { img: 'media/movie/movie_003.avif', title: '短編映画「ロック・シザース・ペーパーズ」', caption: '仲井飛祐監督作品「ロック・シザース・ペーパーズ」<div class="a-button"><a href="https://youtu.be/7GR_ErCZBLs" class="button" target="_blank">本編映像</a></div><br><br>2024年12月1日' },
   { img: 'media/movie/karuizawa.avif', title: '「軽井沢殺人事件」冒頭背景映像・背景画像', caption: '舞台「軽井沢殺人事件」にて、冒頭に上映する映像及び背景に投影する画像を作成いたしました。<br>また、舞台当日の投影業務も行いました。<br><br>2024年11月18日' },
   { img: 'media/movie/movie_002.avif', title: '【制作中】CGアニメ『トレイン』', caption: 'CGアニメ『トレイン』鋭意制作中' },
@@ -6,74 +6,77 @@
 ];
 
 const newsCards = [
-  { img: 'media/movie/movie_003.avif', title:'「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞',caption:  'スマホフィルムフェス2024にて「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞！<div class="a-button"><a href="https://x.com/sumahofilmfes/status/1872422264106594493" class="button" target="_blank">詳しく</a></div><br><br>2024年12月28日' },
+  { img: 'media/movie/movie_003.avif', title:'「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞', caption: 'スマホフィルムフェス2024にて「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞！<div class="a-button"><a href="https://x.com/sumahofilmfes/status/1872422264106594493" class="button" target="_blank">詳しく</a></div><br><br>2024年12月28日' },
   { img: 'media/noimage.svg', title: '短編映画「今日が人生一日目！」製作決定', caption: '詳細な続報は2024年度内に公開予定！<br><br>2024年12月26日' },
-  { img: 'media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<div class="a-button"><a href="https://x.com/stage_shizuka"class="button" target="_blank">詳細情報</a></div><br><br>2024年9月21日' },
+  { img: 'media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<div class="a-button"><a href="https://x.com/stage_shizuka" class="button" target="_blank">詳細情報</a></div><br><br>2024年9月21日' },
   { img: 'media/news/news_001.avif', title: 'ARGOホームページ公開', caption: '創作団体ARGOのホームページを公開しました。<br><br>2024年9月21日' },
 ];
+
 document.addEventListener('DOMContentLoaded', function() {
 
-// カードを生成してDOMに追加する関数
-function addCards(containerId, cards, limit = null) {
-  const container = document.getElementById(containerId);
-  const cardList = limit ? cards.slice(0, limit) : cards;
+  // カードを生成してDOMに追加する関数
+  function addCards(containerId, cards, limit = null) {
+    const container = document.getElementById(containerId);
+    const cardList = limit ? cards.slice(0, limit) : cards;
 
-  cardList.forEach(card => {
-    const cardElement = document.createElement('div');
-    cardElement.className = 'card';
+    cardList.forEach(card => {
+      const cardElement = document.createElement('div');
+      cardElement.className = 'card';
 
-    const imgElement = document.createElement('img');
-    imgElement.src = card.img;
-    imgElement.alt = card.title;  // 画像のalt属性にタイトルを使用
+      const imgElement = document.createElement('img');
+      imgElement.src = card.img;
+      imgElement.alt = card.title;  // 画像のalt属性にタイトルを使用
 
-    const titleElement = document.createElement('div');
-    titleElement.className = 'card-title';
-    titleElement.innerText = card.title;  // タイトルを表示
+      const titleElement = document.createElement('div');
+      titleElement.className = 'card-title';
+      titleElement.innerText = card.title;  // タイトルを表示
 
-    // カードクリックイベントでオーバーレイを表示
-    cardElement.onclick = function() {
-      showOverlay(card.img, card.title, card.caption);
-    };
+      // カードクリックイベントでオーバーレイを表示
+      cardElement.onclick = function() {
+        showOverlay(card.img, card.title, card.caption);
+      };
 
-    cardElement.appendChild(imgElement);
-    cardElement.appendChild(titleElement);
-    container.appendChild(cardElement);
-  });
-}
+      cardElement.appendChild(imgElement);
+      cardElement.appendChild(titleElement);
+      container.appendChild(cardElement);
+    });
+  }
 
-// オーバーレイを表示する関数
-function showOverlay(imgSrc, titleText, captionText) {
-  const overlay = document.getElementById('overlay');
-  const overlayImg = document.getElementById('overlay-img');
-  const overlayTitle = document.getElementById('overlay-title');
-  const overlayCaption = document.getElementById('overlay-caption');
+  // オーバーレイを表示する関数
+  function showOverlay(imgSrc, titleText, captionText) {
+    const overlay = document.getElementById('overlay');
+    const overlayImg = document.getElementById('overlay-img');
+    const overlayTitle = document.getElementById('overlay-title');
+    const overlayCaption = document.getElementById('overlay-caption');
 
-  overlayImg.src = imgSrc;
-  overlayTitle.innerText = titleText;
-  overlayCaption.innerHTML = captionText;  // innerHTMLを使用してHTMLタグが反映されるようにする
-  overlay.style.display = 'flex';
-}
+    overlayImg.src = imgSrc;
+    overlayTitle.innerText = titleText;
+    overlayCaption.innerHTML = captionText;  // innerHTMLを使用してHTMLタグを反映
+    overlay.style.display = 'flex';
+  }
 
-// オーバーレイを閉じる関数
-function closeOverlay() {
-  const overlay = document.getElementById('overlay');
-  overlay.style.display = 'none';
-}
+  // オーバーレイを閉じる関数
+  function closeOverlay() {
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+  }
 
-// ページに応じたカードの表示
-if (window.location.pathname.includes('index.html')) {
-  // index.htmlでは最新3つのみ表示
-  addCards('movie-container', movieCards, 3);
-  addCards('news-container', newsCards, 3);
-} else if (window.location.pathname.includes('all-movies.html')) {
-  // all-movies.htmlではすべての映画カードを表示
-  addCards('movie-container', movieCards);
-} else if (window.location.pathname.includes('news.html')) {
-  // news.htmlではすべてのニュースカードを表示
-  addCards('news-container', newsCards);
-}
+  // ページに応じたカードの表示
+  const path = window.location.pathname;
+  if (path === '/' || path.includes('index.html')) {
+    // ルートパスまたはindex.htmlの場合は最新3件のみ表示
+    addCards('movie-container', movieCards, 3);
+    addCards('news-container', newsCards, 3);
+  } else if (path.includes('all-movies.html')) {
+    // all-movies.htmlではすべての映画カードを表示
+    addCards('movie-container', movieCards);
+  } else if (path.includes('news.html')) {
+    // news.htmlではすべてのニュースカードを表示
+    addCards('news-container', newsCards);
+  }
 
 });
+
 
 // メニューを読み込む関数
 function loadMenu() {
@@ -110,7 +113,7 @@ function loadMenu() {
         closeMenu.style.display = 'none';
       });
 
-      // 画面サイズが変更されたときにメニュー状態を更新
+      // 画面サイズ変更時のメニュー状態の更新
       window.addEventListener('resize', () => {
         if (window.innerWidth > 840) {
           menu.classList.add('expanded');
@@ -125,6 +128,7 @@ function loadMenu() {
     })
     .catch(error => console.error('メニューの読み込みエラー:', error));
 }
+
 document.addEventListener('DOMContentLoaded', () => {
-  loadMenu();      // メニューの読み込みを呼び出し
+  loadMenu(); // メニューの読み込みを実施
 });
