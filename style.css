@@ -325,24 +325,31 @@ largeは代表用です
   font-size: 1rem;
 } */
 /*ここら辺のtableは作品名と役割の奴です。*/
-table{
-  border-collapse: collapse; /* セル間のスペースをなくす */
-  font-family:"Noto Sans JP", Arial, sans-serif;
+
+table {
+  border-collapse: collapse;
+  font-family: "Noto Sans JP", Arial, sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
+  width: 100%; /* テーブルの幅を親要素に合わせる */
 }
+
 th, td {
-  position: relative; /* relativeを指定して::afterでの調整をしやすくする */
-  padding: 0.25rem; /* セル内のパディング */
-  border: none; /* 他のボーダーを無効化 */
-  /* border-bottom: 0.1rem solid #8C1822;  */
-}
-td {
-  border-left:  0.15rem dashed #8C1822; 
+  position: relative;
+  padding: 0.25rem;
+  border: none;
   text-align: left;
+  max-width: 40%; /* 親divの40%に最大幅を設定 */
+  min-width: 100px; /* 最小幅を100pxに設定 */
+  overflow: hidden; /* 内容がオーバーフローしないように */
 }
-th{
+
+th {
   text-align: right;
+}
+
+td {
+  border-left: 0.15rem dashed #8C1822;
 }
 .card-member-small table{
   font-size: 0.75rem;
@@ -361,7 +368,7 @@ img:hover{
   background-color: #00000000;
   }
 
-.fa-brands{
+.fa-brands,.fa-solid{
 	font-size: 2rem;
   color:#353535;
 }
@@ -373,7 +380,7 @@ img:hover{
   color:#ff0000;
 }
 
-.card-member-small .fa-brands{
+.card-member-small .fa-brands, .card-member-small .fa-solid{
 	font-size: 1.25rem;
 }
 
