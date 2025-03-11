@@ -18,16 +18,16 @@
   }
 
   const movieCards = [
-  { img: 'media/movie/movie_004.avif', title: '「Re:BLUE MOMENT」', caption: '東東東監督作品「Re:BLUE MOMENT」<div class="a-button"><a href="https://youtu.be/qJjVPuMcO2g?si=Z2jUE16IYs1cwFX7" class="button" target="_blank">本編映像</a></div><br><br>2025年03月10日' },
-  { img: 'media/movie/movie_003.avif', title: '短編映画「ロック・シザース・ペーパーズ」', caption: '仲井飛祐監督作品「ロック・シザース・ペーパーズ」<div class="a-button"><a href="https://youtu.be/7GR_ErCZBLs" class="button" target="_blank">本編映像</a></div><br><br>2024年12月1日' },
+  { img: 'media/movie/movie_004.avif', title: '「Re:BLUE MOMENT」', caption: '東東東監督作品「Re:BLUE MOMENT」<br>YouTubeにて公開中です。<div class="a-button"><a href="https://youtu.be/qJjVPuMcO2g?si=Z2jUE16IYs1cwFX7" class="button" target="_blank">本編映像</a></div><br><br>2025年03月10日' },
+  { img: 'media/movie/movie_003.avif', title: '短編映画「ロック・シザース・ペーパーズ」', caption: '仲井飛祐監督作品「ロック・シザース・ペーパーズ」<br>YouTubeにて公開中です。<div class="a-button"><a href="https://youtu.be/7GR_ErCZBLs" class="button" target="_blank">本編映像</a></div><br><br>2024年12月1日' },
   { img: 'media/movie/karuizawa.avif', title: '「軽井沢殺人事件」冒頭背景映像・背景画像', caption: '舞台「軽井沢殺人事件」にて、冒頭に上映する映像及び背景に投影する画像を作成いたしました。<br>また、舞台当日の投影業務も行いました。<br><br>2024年11月18日' },
   { img: 'media/movie/movie_002.avif', title: '【制作中】CGアニメ『トレイン』', caption: 'CGアニメ『トレイン』鋭意制作中' },
   { img: 'media/movie/movie_001.avif', title: 'ろくようび『魔法』MV', caption: 'インディーズバンド「ろくようび」ファーストアルバム収録曲『魔法』のミュージックビデオを制作致しました。<div class="a-button"><a href="https://youtu.be/Tq8UwIODUuk?si=k0xTBpTCe6cqoPG8" class="button" target="_blank">本編映像</a></div><br><br>2022年2月28日' },
 ];
 
 const newsCards = [
-  // { img: 'media/news/movie_005.avif', title:'「超覚人」が『第18回TOHOシネマズ学生映画祭』にノミネート', caption: 'ARGOメンバーも複数人関わった、短編映画作品「超覚人」が、『第18回TOHOシネマズ学生映画祭』にノミネートされました。<br>2025年03月27日、TOHOシネマズ日比谷にて上映されます。<div class="a-button"><a href="https://tyokakujin.wixsite.com/untitled" class="button" target="_blank">詳しく</a></div><br><br>2025年03月08日' },
-  { img: 'media/movie/movie_003.avif', title:'「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞', caption: 'スマホフィルムフェス2024にて「ロック・シザース・ペーパーズ」が『エクストラ部門』を受賞！<div class="a-button"><a href="https://x.com/sumahofilmfes/status/1872422264106594493" class="button" target="_blank">詳しく</a></div><br><br>2024年12月28日' },
+  { img: 'media/news/movie_005.avif', title:'ARGOメンバー協力作品「超覚人」『TOHOシネマズ学生映画祭』にノミネート', caption: '短編映画作品「超覚人」が、『第18回TOHOシネマズ学生映画祭』にノミネートされました。ARGOメンバー数名が助監督やメイキングなどで協力しております。<br>2025年03月27日、TOHOシネマズ日比谷にて上映されます。<div class="a-button"><a href="https://tyokakujin.wixsite.com/untitled" class="button" target="_blank">詳しく</a></div><br><br>2025年03月08日' },
+  { img: 'media/movie/movie_003.avif', title:'仲井飛祐監督作「ロック・シザース・ペーパーズ」『エクストラ部門』を受賞', caption: '仲井飛祐監督作「ロック・シザース・ペーパーズ」が、スマホフィルムフェス2024にて『エクストラ部門』を受賞しました！<div class="a-button"><a href="https://x.com/sumahofilmfes/status/1872422264106594493" class="button" target="_blank">詳しく</a></div><br><br>2024年12月28日' },
   { img: 'media/noimage.svg', title: '舞台『軽井沢殺人事件』の映像を担当', caption: 'Ｙプロジェクト・舞台製作集団SHIZUKAが企画・製作している『軽井沢殺人事件』にて、映像を担当致します。<div class="a-button"><a href="https://x.com/stage_shizuka" class="button" target="_blank">詳細情報</a></div><br><br>2024年9月21日' },
   { img: 'media/news/news_001.avif', title: 'ARGOホームページ公開', caption: '創作団体ARGOのホームページを公開しました。<br><br>2024年9月21日' },
 ];
