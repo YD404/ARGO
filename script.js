@@ -1,23 +1,36 @@
-  // オーバーレイを表示する関数
-  function showOverlay(imgSrc, titleText, captionText) {
-    const overlay = document.getElementById('overlay');
-    const overlayImg = document.getElementById('overlay-img');
-    const overlayTitle = document.getElementById('overlay-title');
-    const overlayCaption = document.getElementById('overlay-caption');
+// オーバーレイを表示する関数
+function showOverlay(imgSrc, titleText, captionText) {
+  const overlay = document.getElementById('overlay');
+  const overlayImg = document.getElementById('overlay-img');
+  const overlayTitle = document.getElementById('overlay-title');
+  const overlayCaption = document.getElementById('overlay-caption');
 
-    overlayImg.src = imgSrc;
-    overlayTitle.innerText = titleText;
-    overlayCaption.innerHTML = captionText;  // innerHTMLを使用してHTMLタグを反映
-    overlay.style.display = 'flex';
-  }
+  overlayImg.src = imgSrc;
+  overlayTitle.innerText = titleText;
+  overlayCaption.innerHTML = captionText;  // innerHTMLを使用してHTMLタグを反映
+  overlay.style.display = 'flex';
+}
 
-  // オーバーレイを閉じる関数
-  function closeOverlay() {
-    const overlay = document.getElementById('overlay');
-    overlay.style.display = 'none';
-  }
+// オーバーレイを閉じる関数
+function closeOverlay() {
+  const overlay = document.getElementById('overlay');
+  overlay.style.display = 'none';
+}
 
-  const movieCards = [
+// オーバーレイの背景クリックで閉じるイベントリスナーを追加
+document.addEventListener('DOMContentLoaded', function() {
+  const overlay = document.getElementById('overlay');
+  const overlayContent = document.querySelector('.overlay-content');
+  
+  overlay.addEventListener('click', function(event) {
+    // クリックがオーバーレイ自体（暗い背景部分）にあった場合のみ閉じる
+    if (event.target === overlay) {
+      closeOverlay();
+    }
+  });
+});
+
+const movieCards = [
   { img: 'media/movie/movie_004.avif', title: '「Re:BLUE MOMENT」', caption: '東東東監督作品「Re:BLUE MOMENT」<br>YouTubeにて公開中です。<div class="a-button"><a href="https://youtu.be/qJjVPuMcO2g?si=Z2jUE16IYs1cwFX7" class="button" target="_blank">本編映像</a></div><br><br>2025年03月10日' },
   { img: 'media/movie/movie_003.avif', title: '短編映画「ロック・シザース・ペーパーズ」', caption: '仲井飛祐監督作品「ロック・シザース・ペーパーズ」<br>YouTubeにて公開中です。<div class="a-button"><a href="https://youtu.be/7GR_ErCZBLs" class="button" target="_blank">本編映像</a></div><br><br>2024年12月1日' },
   { img: 'media/movie/karuizawa.avif', title: '「軽井沢殺人事件」冒頭背景映像・背景画像', caption: '舞台「軽井沢殺人事件」にて、冒頭に上映する映像及び背景に投影する画像を作成いたしました。<br>また、舞台当日の投影業務も行いました。<br><br>2024年11月18日' },
