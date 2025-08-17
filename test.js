@@ -1,11 +1,10 @@
-// ./data/test.json を読み、select==="test" のカードを表示
+// test.js（全件表示・静的JSON）
 const API_URL = "./data/test.json";
 
 const elStatus = document.getElementById("status");
 const elCards  = document.getElementById("cards");
 const tpl      = document.getElementById("card-tpl");
 
-const norm = v => (v ?? "").toString().trim().toLowerCase();
 const fmtDateOnly = iso => {
   if (!iso) return "";
   try { return new Intl.DateTimeFormat("ja-JP", { dateStyle: "medium" }).format(new Date(iso)); }
@@ -21,7 +20,7 @@ const placeholderSvg = () =>
   );
 
 function appendCard(item){
-  const { title, date, caption, Image, linkURL, linkTX } = item;
+  const { title, date, caption, Image, linkURL, linkTX, select } = item;
   const node = tpl.content.cloneNode(true);
 
   const img = node.querySelector(".card__img");
@@ -46,6 +45,15 @@ function appendCard(item){
     a.rel = "noopener noreferrer";
     act.appendChild(a);
   }
+
+  // デバッグ用に select 値を表示（小さめ）
+  const info = document.createElement("div");
+  info.style.fontSize = "12px";
+  info.style.color = "#8a8fa3";
+  info.style.marginTop = "6px";
+  info.textContent = `select: ${select ?? "(未設定)"}`;
+  act.appendChild(info);
+
   elCards.appendChild(node);
 }
 
@@ -55,13 +63,12 @@ async function main(){
     if(!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
     const data = await res.json();
 
-    const all = data.contents ?? [];
-    const items = all
-      .filter(it => norm(it.select) === "test")
+    const items = (data.contents ?? [])
+      // 任意：dateがあるものを新しい順に（不要ならこの行を消してください）
       .sort((a,b)=> new Date(b.date ?? 0) - new Date(a.date ?? 0));
 
     if(items.length === 0){
-      elStatus.textContent = "select が「test」のデータはありません。";
+      elStatus.textContent = "データが1件もありません。";
       return;
     }
     elCards.hidden = false;
