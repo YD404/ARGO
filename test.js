@@ -1,6 +1,26 @@
-// test.js（全件表示・静的JSON）
-const API_URL = "./data/test.json";
+// === all.json ローダー（ページの場所に依存せず動かす） ===
+const CANDIDATES = ["./data/all.json", "../data/all.json", "/data/all.json"];
+async function loadAllJson() {
+  let lastErr;
+  for (const p of CANDIDATES) {
+    try {
+      const res = await fetch(p + `?t=${Date.now()}`, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      console.log("[all.json] loaded:", p);
+      return await res.json();
+    } catch (e) {
+      console.warn("[all.json] failed:", p, e.message);
+      lastErr = e;
+    }
+  }
+  throw lastErr ?? new Error("all.json not found");
+}
 
+// === ページごとの設定 ===
+// testページは全件出したいので null（= 絞り込みなし）
+const TARGET_SELECT = null; // "news" / "movie" / "test" にすれば絞り込み
+
+// === 以降は既存の描画コードそのまま（必要最小限の関数だけ同梱） ===
 const elStatus = document.getElementById("status");
 const elCards  = document.getElementById("cards");
 const tpl      = document.getElementById("card-tpl");
@@ -46,7 +66,7 @@ function appendCard(item){
     act.appendChild(a);
   }
 
-  // デバッグ用に select 値を表示（小さめ）
+  // デバッグ用に select 値を表示
   const info = document.createElement("div");
   info.style.fontSize = "12px";
   info.style.color = "#8a8fa3";
@@ -57,15 +77,18 @@ function appendCard(item){
   elCards.appendChild(node);
 }
 
-async function main(){
+document.addEventListener("DOMContentLoaded", async () => {
   try{
-    const res = await fetch(API_URL, { cache: "no-store" });
-    if(!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
-    const data = await res.json();
+    const data = await loadAllJson();
+    let items = data.contents ?? [];
 
-    const items = (data.contents ?? [])
-      // 任意：dateがあるものを新しい順に（不要ならこの行を消してください）
-      .sort((a,b)=> new Date(b.date ?? 0) - new Date(a.date ?? 0));
+    // 必要なら select で絞る（news/movie/testなど）
+    if (typeof TARGET_SELECT === "string") {
+      const norm = v => (v ?? "").toString().trim().toLowerCase();
+      items = items.filter(it => norm(it.select) === norm(TARGET_SELECT));
+    }
+
+    items.sort((a,b)=> new Date(b.date ?? 0) - new Date(a.date ?? 0));
 
     if(items.length === 0){
       elStatus.textContent = "データが1件もありません。";
@@ -78,6 +101,4 @@ async function main(){
     console.error(err);
     elStatus.textContent = `取得エラー: ${err.message}`;
   }
-}
-
-document.addEventListener("DOMContentLoaded", main);
+});
