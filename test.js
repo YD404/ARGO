@@ -6,7 +6,7 @@ async function main() {
   const data = await res.json();
   const items = (data.contents ?? []).sort((a,b)=> new Date(b.date??0) - new Date(a.date??0));
   items.forEach(addCard);
-
+}
 const apiUrl = `https://${SERVICE_DOMAIN}.microcms.io/api/v1/${ENDPOINT}?limit=${LIMIT}&orders=-date`;
 
 const elStatus = document.getElementById("status");
