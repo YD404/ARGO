@@ -1,0 +1,46 @@
+name: Fetch microCMS to JSON
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # 30分ごと。必要に応じて調整
+  workflow_dispatch: {}       # 手動実行ボタンを有効化
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure jq exists (fallback)
+        run: |
+          if ! command -v jq >/dev/null 2>&1; then
+            sudo apt-get update && sudo apt-get install -y jq
+          fi
+
+      - name: Fetch contents from microCMS
+        env:
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+          SERVICE_DOMAIN: ${{ secrets.SERVICE_DOMAIN }}
+          ENDPOINT: ${{ secrets.ENDPOINT }}
+        run: |
+          mkdir -p data
+          curl -sS \
+            -H "X-MICROCMS-API-KEY: ${MICROCMS_API_KEY}" \
+            "https://${SERVICE_DOMAIN}.microcms.io/api/v1/${ENDPOINT}?limit=100" \
+            > data/all.json
+
+          # selectの値ごとに分割（news / movie / test）
+          jq '{contents: [.contents[] | select(.select == "news")]}'  data/all.json > data/news.json
+          jq '{contents: [.contents[] | select(.select == "movie")]}' data/all.json > data/movie.json
+          jq '{contents: [.contents[] | select(.select == "test")]}'  data/all.json > data/test.json
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/*.json
+          if git commit -m "chore: update microCMS JSON ($(date -u +%FT%TZ))"; then
+            git push
+          else
+            echo "No changes"
+          fi
