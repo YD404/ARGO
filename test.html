@@ -1,18 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Flex Card</title>
-    <link rel="stylesheet" href="test.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>microCMS Test Cards</title>
+  <link rel="stylesheet" href="./test.css" />
 </head>
 <body>
-    <div class="card">
-        <img src="https://via.placeholder.com/150" alt="Sample Image" class="card-image">
-        <div class="card-info">
-            <h2 class="card-title">カードのタイトル</h2>
-            <p class="card-description">こちらはカードの説明です。詳細な情報をここに記述できます。</p>
+  <header class="site-header">
+    <h1>Testページ用カード一覧（select = "test" のみ）</h1>
+  </header>
+
+  <main class="container">
+    <div id="status" class="status">Loading…</div>
+    <section id="cards" class="cards" hidden></section>
+  </main>
+
+  <template id="card-tpl">
+    <article class="card">
+      <div class="card__media">
+        <img class="card__img" alt="" />
+      </div>
+      <div class="card__body">
+        <h2 class="card__title"></h2>
+        <time class="card__date" datetime=""></time>
+        <p class="card__caption"></p>
+        <div class="card__actions">
+          <!-- JSで必要時のみボタン生成 -->
         </div>
-    </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="./test.js" defer></script>
 </body>
 </html>
