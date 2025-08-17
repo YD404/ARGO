@@ -1,5 +1,8 @@
 name: Fetch microCMS to JSON
 
+permissions:
+  contents: write
+  
 on:
   schedule:
     - cron: "*/30 * * * *"   # 30分ごと。必要に応じて調整
