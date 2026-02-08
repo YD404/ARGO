@@ -1,0 +1,6 @@
+# APIキー（絶対にgitにあげない）
+.api_key
+
+# 一時ファイル
+*.pyc
+__pycache__/

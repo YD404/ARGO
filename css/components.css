@@ -1,0 +1,179 @@
+/* ===========================================
+   Components - 再利用可能なUIコンポーネント
+   =========================================== */
+
+/* カードコンテナ */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 16px;
+}
+
+/* カード（作品・ニュース用） */
+.card {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    margin: 10px;
+    width: 20em;
+    overflow: hidden;
+    background-color: var(--color-surface);
+    transition: transform var(--transition-fast);
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card:not(:hover) {
+    transform: scale(1);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-title {
+    padding: 15px;
+    text-align: left;
+    font-size: 1.5em;
+}
+
+/* オーバーレイ（モーダル） */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    /* 背景を透明に */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1500;
+    /* ナビ(1000)より上に */
+}
+
+.overlay-content {
+    background-color: rgba(250, 250, 250, 0.9);
+    /* 白のわずかに透明 */
+    padding: 2em;
+    border-radius: 0;
+    /* 縁なし */
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    white-space: pre-line;
+    word-wrap: break-word;
+    overflow-y: auto;
+    /* スクロール可能に */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay img {
+    max-width: 100%;
+    height: 20vw;
+    min-height: 150px;
+    /* 最低高さを確保 */
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* スマホ対応 */
+@media (max-width: 840px) {
+    .overlay img {
+        height: auto;
+        max-height: 40vh;
+        /* 画面の40%まで */
+        width: 90vw;
+    }
+}
+
+.close-button {
+    position: fixed;
+    /* 画面に固定 */
+    top: 20px;
+    right: 30px;
+    font-size: 3em;
+    cursor: pointer;
+    z-index: 1600;
+    /* 最前面 */
+    color: var(--color-text);
+}
+
+.overlay h2 {
+    font-size: 1.5em;
+}
+
+.overlay p {
+    font-size: 1em;
+    margin: 1em;
+}
+
+/* ボタン */
+.more {
+    padding: 1em 0;
+    text-align: center;
+}
+
+.a-button {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+.more-button,
+.connect-button,
+a.button {
+    background-color: transparent;
+    border: 1px solid;
+    display: inline-block;
+    border-radius: var(--radius-lg);
+    height: 4em;
+    width: 16em;
+    font-size: 1.25em;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-align: center;
+}
+
+.more-button,
+a.button {
+    color: var(--color-primary);
+}
+
+.connect-button {
+    color: var(--color-surface);
+}
+
+a.button {
+    line-height: 4em;
+    font-family: var(--font-sans);
+}
+
+/* ボタンホバー */
+.more-button:hover,
+a.button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    font-weight: bold;
+}
+
+.connect-button:hover {
+    background-color: var(--color-dark-alpha);
+    font-weight: bold;
+}
+
+/* フォーム埋め込み */
+.foam {
+    width: 100%;
+    height: 50rem;
+}

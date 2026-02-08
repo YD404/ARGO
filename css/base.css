@@ -1,0 +1,256 @@
+/* ===========================================
+   Base - 全ページ共通スタイル
+   =========================================== */
+
+/* リセット・基本設定 */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* ヘッダー・フッター */
+header {
+    z-index: 1000;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* ナビゲーションメニュー */
+nav {
+    background-color: var(--color-primary);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: var(--shadow-nav);
+    z-index: 1000;
+    padding: 0.5em;
+}
+
+.menu-toggle,
+.close-menu {
+    display: none;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1100;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    transition: max-height var(--transition-fast);
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.menu.expanded {
+    max-height: 300px;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 10px 20px;
+    display: block;
+    transition: color var(--transition-fast), background-color var(--transition-fast), font-weight var(--transition-fast);
+}
+
+.menu li a:hover {
+    color: var(--color-primary);
+    background-color: var(--color-surface);
+    font-weight: bold;
+}
+
+/* レスポンシブメニュー（840px以下）- 全画面オーバーレイ */
+@media (max-width: 840px) {
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1100;
+        border-radius: var(--radius-md);
+        font-size: 1.5rem;
+        padding: 8px 16px;
+    }
+
+    .close-menu {
+        display: none;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 2100;
+        border-radius: var(--radius-md);
+        font-size: 1.5rem;
+        padding: 8px 16px;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(140, 24, 34, 0.95);
+        z-index: 2000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    nav.menu-open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-height: none;
+        overflow: visible;
+    }
+
+    nav .menu.expanded {
+        max-height: none;
+    }
+
+    .menu li {
+        margin: 1.5rem 0;
+    }
+
+    .menu li a {
+        font-size: 2rem;
+        padding: 15px 30px;
+    }
+}
+
+/* タイポグラフィ */
+h1 {
+    font-size: 10vw;
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 3em;
+    color: var(--color-primary);
+    margin: 0;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5em;
+    font-family: var(--font-serif);
+    font-weight: 600;
+}
+
+p span {
+    position: relative;
+    background: linear-gradient(transparent 40%, yellow 40%);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 800;
+    transition: all var(--transition-fast);
+}
+
+a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+hr {
+    border-width: 0.25rem 0 0 0;
+    border-style: dashed;
+    border-color: var(--color-primary);
+}
+
+/* ユーティリティクラス */
+.textblock {
+    margin: 0 2em;
+}
+
+.bacWhite {
+    padding: 1em 0;
+    background-color: var(--color-surface);
+}
+
+.bacWhiteAlpha {
+    padding: 1em 0;
+    background-color: var(--color-surface-alpha);
+}
+
+.bacblackAlpha {
+    padding: 1em 0;
+    background-color: var(--color-dark-alpha);
+}
+
+/* アイコン共通 */
+.icon:hover {
+    background-color: transparent;
+}
+
+img:hover {
+    background-color: transparent;
+}
+
+.fa-brands,
+.fa-solid {
+    font-size: 2rem;
+    color: var(--color-text);
+}
+
+.fa-twitter {
+    color: var(--color-twitter);
+}
+
+.fa-youtube {
+    color: var(--color-youtube);
+}

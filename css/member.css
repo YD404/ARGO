@@ -1,0 +1,259 @@
+/* ===========================================
+   Member - メンバーページ専用スタイル
+   =========================================== */
+
+/* メンバーカード共通 */
+.card-member-large,
+.card-member-medium,
+.card-member-small {
+    display: flex;
+    margin: 1rem;
+    overflow: hidden;
+    min-width: 340px;
+}
+
+.card-member-small {
+    flex-grow: 1;
+}
+
+.card-member-large img,
+.card-member-medium img,
+.card-member-small img {
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    width: 50%;
+    min-width: 50%;
+    border-radius: var(--radius-sm);
+}
+
+/* リーダーの画像は3:2 */
+#leader-container .card-member-large img {
+    aspect-ratio: 3 / 2;
+}
+
+/* メンバーカード内容 */
+.content-member {
+    padding: 1rem;
+    margin: 0.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-member h2,
+.content-member h3 {
+    color: var(--color-text);
+    text-align: left;
+}
+
+.content-member h3 {
+    margin: 0;
+}
+
+.content-member p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+/* カードサイズ別設定 */
+.card-member-large {
+    width: calc(50% - 2rem);
+    max-width: calc(50% - 2rem);
+    min-width: 300px;
+}
+
+/* boiあり（リーダー）は全幅 */
+#leader-container .card-member-large {
+    width: 100%;
+    max-width: 100%;
+}
+
+.card-member-medium {
+    width: calc(33.333% - 2rem);
+    max-width: calc(33.333% - 2rem);
+    min-width: 280px;
+}
+
+.card-member-small {
+    width: calc(25% - 2rem);
+    max-width: calc(25% - 2rem);
+    min-width: 260px;
+}
+
+/* 見出しサイズ */
+#leader-container .card-member-large h2 {
+    font-size: 3.5rem;
+}
+
+#leader-container .card-member-large h3 {
+    font-size: 2rem;
+}
+
+#leader-container .card-member-large p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+#leader-container .card-member-large table {
+    font-size: 1.2rem;
+}
+
+.card-member-large h2 {
+    font-size: 2.5rem;
+}
+
+.card-member-medium h2 {
+    font-size: 1.5rem;
+}
+
+.card-member-small h2 {
+    font-size: 1.2rem;
+}
+
+.card-member-large h3 {
+    font-size: 1.5rem;
+}
+
+.card-member-medium h3 {
+    font-size: 1rem;
+}
+
+.card-member-small h3 {
+    font-size: 0.9rem;
+}
+
+/* テーブル（作品名・役割） */
+.content-history {
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+/* スクロールバースタイル */
+.content-history::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-history::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.content-history::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+
+.content-history::-webkit-scrollbar-thumb:hover {
+    background: #6a1018;
+}
+
+table {
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+th,
+td {
+    position: relative;
+    padding: 0.25rem;
+    border: none;
+    text-align: left;
+    max-width: 40%;
+    min-width: 80px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+th {
+    text-align: right;
+}
+
+td {
+    border-left: 0.15rem dashed var(--color-primary);
+}
+
+.card-member-small table {
+    font-size: 0.75rem;
+}
+
+/* ソーシャルアイコン */
+.social-icons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.card-member-small .fa-brands,
+.card-member-small .fa-solid {
+    font-size: 1.25rem;
+}
+
+/* レスポンシブ（1279px以下） */
+@media (max-width: 1279px) {
+    .card-member-small {
+        max-width: 40vw;
+    }
+}
+
+/* レスポンシブ（840px以下）- スマホ */
+@media (max-width: 840px) {
+
+    /* textblockの余白(2em)を打ち消して全幅に */
+    .textblock>.card-container {
+        margin-left: -2em;
+        margin-right: -2em;
+        width: calc(100% + 4em);
+    }
+
+    .card-member-large,
+    .card-member-medium,
+    .card-member-small {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        margin: 0 0 1rem 0;
+    }
+
+    /* 通常カードの画像：全幅、横長、角丸なし */
+    .card-member-medium img,
+    .card-member-small img {
+        width: 100vw;
+        min-width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        aspect-ratio: 2 / 1;
+        border-radius: 0;
+    }
+
+    #member-container .card-member-large img {
+        border-radius: 0;
+    }
+
+    /* リーダーカードの画像：余白あり、1:1 */
+    #leader-container .card-member-large {
+        margin: 1rem;
+        width: calc(100% - 2rem);
+    }
+
+    #leader-container .card-member-large img {
+        width: 100%;
+        min-width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* 通常largeカードの画像 */
+    #member-container .card-member-large img {
+        width: 100vw;
+        min-width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        aspect-ratio: 2 / 1;
+    }
+
+    .content-member {
+        padding: 0.5rem 1rem;
+    }
+}

@@ -1,0 +1,48 @@
+/* ===========================================
+   CSS Variables - カラー・フォント・シャドウ等の定義
+   =========================================== */
+
+:root {
+    /* カラーパレット */
+    --color-primary: #8C1822;
+    /* メインカラー（赤） */
+    --color-bg: #f4f4f4;
+    /* ページ背景 */
+    --color-surface: #fafafa;
+    /* カード等の背景 */
+    --color-surface-alpha: #fafafaee;
+    --color-text: #353535;
+    /* 本文テキスト */
+    --color-text-light: #dfcebf;
+    /* 明るいテキスト（ナビ等） */
+    --color-dark: #242830;
+    /* 暗い背景 */
+    --color-dark-alpha: #242830ee;
+    --color-overlay: #353535ee;
+    /* オーバーレイ背景 */
+
+    /* SNSカラー */
+    --color-twitter: #1d9bf0;
+    --color-youtube: #ff0000;
+
+    /* フォント */
+    --font-sans: "Noto Sans JP", Arial, sans-serif;
+    --font-serif: "Noto Serif JP", serif;
+    --font-display: "Poppins", sans-serif;
+
+    /* シャドウ */
+    --shadow-card: 0 0 1em #35353599;
+    --shadow-nav: 0 0 0.5em #353535;
+    --shadow-overlay: 0 0 1em #dfcebf;
+    --shadow-text: 0 0 16px #fafafa99;
+    --shadow-text-sm: 0 0 8px #fafafa99;
+
+    /* 角丸 */
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 4rem;
+
+    /* トランジション */
+    --transition-fast: 0.3s ease;
+    --transition-normal: 0.5s ease;
+}

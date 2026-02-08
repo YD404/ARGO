@@ -1,0 +1,66 @@
+/* ===========================================
+   Index - トップページ専用スタイル
+   =========================================== */
+
+/* 背景動画 */
+#backgroundVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* メインビジュアル */
+.main-visual {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-visual-content {
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--color-primary);
+}
+
+.main-visual-content h1 {
+    font-family: var(--font-display);
+    font-size: 25vw;
+    font-weight: 900;
+    margin-top: -10vw;
+    margin-bottom: -10vw;
+    text-shadow: var(--shadow-text);
+}
+
+.main-visual-content p {
+    font-size: 3vw;
+    font-weight: 600;
+    text-shadow: var(--shadow-text-sm);
+    text-align: center;
+}
+
+/* ARGO SNSセクション */
+.ARGOSNS {
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.ARGOSNS:hover {
+    background-color: transparent;
+}
+
+.ARGOSNS .fa-brands {
+    font-size: 5rem;
+}
