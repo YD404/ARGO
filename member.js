@@ -145,9 +145,14 @@ function createMemberCard(member, forceSize = null) {
 
 // === メイン ===
 document.addEventListener("DOMContentLoaded", async () => {
+    showLoader(leaderContainer);
+    showLoader(memberContainer);
     try {
         const data = await loadMembersJson();
         const members = data.contents ?? [];
+
+        hideLoader(leaderContainer);
+        hideLoader(memberContainer);
 
         if (members.length === 0) {
             const msg = document.createElement("p");
@@ -213,6 +218,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     } catch (err) {
         console.error("[member]", err);
+        hideLoader(leaderContainer);
+        hideLoader(memberContainer);
         const msg = document.createElement("p");
         msg.textContent = `取得エラー: ${err.message}`;
         memberContainer?.appendChild(msg);

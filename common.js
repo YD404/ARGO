@@ -1,3 +1,22 @@
+// === ローダー表示/非表示 ===
+function showLoader(container) {
+  if (!container) return;
+  const loader = document.createElement("div");
+  loader.className = "loader-container";
+  loader.innerHTML = `<svg viewBox="0 0 100 100">
+    <circle class="dot" cx="30" cy="50" r="5" />
+    <circle class="dot" cx="50" cy="50" r="5" />
+    <circle class="dot" cx="70" cy="50" r="5" />
+  </svg>`;
+  container.appendChild(loader);
+}
+
+function hideLoader(container) {
+  if (!container) return;
+  const loader = container.querySelector(".loader-container");
+  if (loader) loader.remove();
+}
+
 // オーバーレイを表示する関数
 function showOverlay(imgSrc, titleText, captionText) {
   const overlay = document.getElementById('overlay');

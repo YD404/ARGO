@@ -129,12 +129,14 @@ window.closeOverlay = closeOverlay;
 
 // メイン
 document.addEventListener("DOMContentLoaded", async () => {
+  showLoader(container);
   try {
     const data = await loadAllJson();
     let items = (data.contents ?? [])
       .filter((it) => norm(it.select) === norm(TARGET_SELECT))
       .sort((a, b) => new Date(b.date ?? 0) - new Date(a.date ?? 0));
 
+    hideLoader(container);
     if (items.length === 0) {
       const msg = document.createElement("p");
       msg.textContent = `select が「${TARGET_SELECT}」の作品がありません。`;
@@ -144,6 +146,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     items.forEach(addCard);
   } catch (err) {
     console.error(err);
+    hideLoader(container);
     const msg = document.createElement("p");
     msg.textContent = `取得エラー: ${err.message}`;
     container.appendChild(msg);

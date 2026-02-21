@@ -5,10 +5,10 @@ const ALL_JSON = "./data/all.json";
 // index.html 内の要素（既存の見た目をそのまま使います）
 const $ = (s) => document.querySelector(s);
 const movieContainer = $("#movie-container");
-const newsContainer  = $("#news-container");
-const overlay        = $("#overlay");
-const overlayImg     = $("#overlay-img");
-const overlayTitle   = $("#overlay-title");
+const newsContainer = $("#news-container");
+const overlay = $("#overlay");
+const overlayImg = $("#overlay-img");
+const overlayTitle = $("#overlay-title");
 const overlayCaption = $("#overlay-caption");
 
 // util
@@ -67,9 +67,9 @@ function openOverlay({ title, caption, img, linkURL, linkTX, date }) {
 
   const content = overlay.querySelector(".overlay-content");
   // 以前の挿入要素を掃除
-  const oldBtn  = content.querySelector(".a-button");
+  const oldBtn = content.querySelector(".a-button");
   const oldDate = content.querySelector(".posted-date");
-  if (oldBtn)  oldBtn.remove();
+  if (oldBtn) oldBtn.remove();
   if (oldDate) oldDate.remove();
 
   if (linkURL && linkTX) {
@@ -118,18 +118,24 @@ function renderTop3(container, items, selectValue) {
 
 // 起動
 document.addEventListener("DOMContentLoaded", async () => {
+  showLoader(movieContainer);
+  showLoader(newsContainer);
   try {
     const res = await fetch(ALL_JSON + `?t=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    const all  = data.contents ?? [];
+    const all = data.contents ?? [];
 
-    renderTop3(newsContainer,  all, "news");
+    hideLoader(movieContainer);
+    hideLoader(newsContainer);
+    renderTop3(newsContainer, all, "news");
     renderTop3(movieContainer, all, "movie");
   } catch (e) {
     console.error("[index]", e);
+    hideLoader(movieContainer);
+    hideLoader(newsContainer);
     // 失敗時は簡易メッセージ
-    if (newsContainer)  newsContainer.textContent  = "データ取得に失敗しました。";
+    if (newsContainer) newsContainer.textContent = "データ取得に失敗しました。";
     if (movieContainer) movieContainer.textContent = "データ取得に失敗しました。";
   }
 });
